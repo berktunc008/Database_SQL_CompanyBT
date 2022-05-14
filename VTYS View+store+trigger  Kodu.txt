@@ -1,0 +1,45 @@
+
+1)---view KODU----
+
+CREATE VIEW Maas_3000denBuyuk_personeller
+AS
+SELECT PersonelID, Ad, Soyad,Adres,Maas  
+from Calisanlar
+Where Maas>6000
+
+
+2)-Stored Producure EKLEME İŞLEMİ-
+
+Exec Musteri_Ekleme '15', 'Didier' , 'Drogba' , 'Drogba@gmail.com' , '05488836584' ,'bahcelievler', 'E'
+
+exec sp_Calisanlarbilgi 'ali', 'osman'
+
+
+3)---Trigger ekleme--(new queryde aşağıdaki kodu yaz)
+
+insert into Tedarikci values('6','aktarlar','65')
+
+
+
+EKLEME İŞLEMİ:
+
+INSERT INTO dbo.Calisanlar(PersonelID,Password,DepartmanID,Ad,Soyad,Cinsiyet,Adres,Maas,Email,DogumTarihi,Telefon)
+VALUES ('399','12345789','2','Mahmut','Ulucan','E','Şişli','9870','Mahmut55@gmail.com','1993-11-12','5374556995')
+
+
+GÜNCELLEME İŞLEMİ:
+
+UPDATE Calisanlar
+ SET Maas=Maas+1000 
+WHERE PersonelID=456
+
+
+SİLME İŞLEMİ:
+
+DELETE FROM Calisanlar WHERE PersonelID=565
+
+
+
+
+
+
